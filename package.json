@@ -1,0 +1,28 @@
+{
+  "name": "notes",
+  "version": "0.0.1",
+  "description": "Nate taking web app.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SnapperGee/node-note.git"
+  },
+  "keywords": [
+    "note",
+    "notes",
+    "node",
+    "npm"
+  ],
+  "author": "Snap",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SnapperGee/node-note/issues"
+  },
+  "homepage": "https://github.com/SnapperGee/node-note",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
