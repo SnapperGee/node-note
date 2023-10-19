@@ -22,7 +22,7 @@ export const deleteNotes = (req, res) =>
     {
         if (err)
         {
-            resObj.message = "Error writing to db.json";
+            resObj.message = "Error writing db file";
             resObj.error = err;
         };
 
