@@ -58,7 +58,8 @@ Note taking web app.
 
 ---
 
-Clicking the add icon (the `'+'`) in the upper right hand corner will deselect
-the note and allow a new note title and text to be inputted.
+Clicking the add icon (`'+'`) in the upper right hand corner will deselect the
+note and allow a new note title and text to be inputted.
 
-Clicking the delete icon on one of the listed notes to the left will delete it.
+Clicking the delete icon (red trashcan) on one of the listed notes to the left
+will delete it.
