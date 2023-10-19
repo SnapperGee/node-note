@@ -1,10 +1,5 @@
 [
     {
-        "title":"Test Title",
-        "text":"Test text",
-        "id": 0
-    },
-    {
         "title":"Get milk",
         "text":"Go to the store and get milk.",
         "id": 23456754
