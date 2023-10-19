@@ -14,14 +14,11 @@ export const deleteNotes = (req, res) =>
         return;
     }
 
-    const notesObj = notes.filter((note, index) => indexOfNoteWithId !== index);
-    const resObj = { deleted: structuredClone(notes[indexOfNoteWithId]), error: null }
+    const resObj = { deleted: notes.splice(indexOfNoteWithId, 1)[0], error: null }
 
     const pathToDb = resolvePath("db", "db.json");
 
-    console.log(`\n\n\n${pathToDb}\n\n\n}`);
-
-    writeFile(pathToDb, JSON.stringify(notesObj, null, 2), (err) =>
+    writeFile(pathToDb, JSON.stringify(notes, null, 2), (err) =>
     {
         if (err) { resObj.error = err; };
     });
