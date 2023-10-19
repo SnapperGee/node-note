@@ -180,6 +180,4 @@ if (window.location.pathname === '/notes') {
   noteText?.addEventListener('keyup', handleRenderSaveBtn);
 }
 
-console.log("MEEP");
-
 getAndRenderNotes();
