@@ -180,6 +180,4 @@ if (window.location.pathname === '/notes.html') {
   noteText?.addEventListener('keyup', handleRenderSaveBtn);
 }
 
-console.log(`\n\n\n${window.location.pathname}\n\n\n`);
-
 getAndRenderNotes();
