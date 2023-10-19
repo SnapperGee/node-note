@@ -8,4 +8,4 @@ const app = express();
 app.use(routes);
 app.use(express.static("public"));
 
-app.listen(PORT, () => console.log(`Express server listening on PORT ${PORT}...`));
+app.listen(PORT, () => console.log(`Express server listening on http://localhost:${PORT}...`));
