@@ -1,43 +1,45 @@
+/**
+ * @module post-notes
+ */
+
 import notes from "../db/db.json" assert { type: "json" };
 import { resolve as resolvePath } from "node:path";
 import { writeFile } from "node:fs";
+import { randomUUID } from "node:crypto";
 
-const generateRandomInt = (excludeNumbers) =>
-{
-    let randomInt = Math.floor(Math.random() * Number.MAX_VALUE);
-
-    if (excludeNumbers instanceof Array)
-    {
-        while (excludeNumbers.includes(randomInt))
-        {
-            randomInt = Math.floor(Math.random() * Number.MAX_VALUE);;
-        }
-    }
-
-    if (excludeNumbers instanceof Set)
-    {
-        while (excludeNumbers.has(randomInt))
-        {
-            randomInt = Math.floor(Math.random() * Number.MAX_VALUE);;
-        }
-    }
-
-    return randomInt;
-};
-
+/**
+ * Adds a note to json db file and returns the added note to the client.
+ *
+ * @param {*} req Request object.
+ * @param {*} res Response object.
+ */
 export const postNotes = (req, res) =>
 {
+    // Get title and text of note to add from client.
     const {title, text} = req.body;
 
+    // Get IDs of all notes to make sure new ID is unique.
     const ids = notes.map(note => note.id);
 
-    const newNote = {
-        id: generateRandomInt(ids),
+    const id = ((preExistingIDs) =>
+    {
+        let newID = randomUUID();
+
+        while (preExistingIDs.includes(newID))
+        {
+            newID = randomUUID();
+        }
+
+        return newID;
+    })(ids);
+
+    const note = {
+        id,
         title,
         text
     };
 
-    notes.push(newNote);
+    notes.push(note);
 
     const pathToDb = resolvePath("db", "db.json");
 
@@ -49,7 +51,7 @@ export const postNotes = (req, res) =>
             return;
         };
 
-        res.json(newNote);
+        res.json(note);
     });
 
 };
