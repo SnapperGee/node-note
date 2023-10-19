@@ -7,6 +7,6 @@ export const route = Router();
 
 route.get("/", getNotes);
 route.post("/", postNotes);
-route.delete("/", deleteNotes);
+route.delete("/:id", deleteNotes);
 
 export default route;
