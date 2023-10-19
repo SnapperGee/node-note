@@ -28,8 +28,5 @@
   "homepage": "https://github.com/SnapperGee/node-note",
   "dependencies": {
     "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
   }
 }
