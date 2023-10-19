@@ -41,21 +41,17 @@ export const postNotes = (req, res) =>
 
     const pathToDb = resolvePath("db", "db.json");
 
-    const resObj = {message: "", added: null, error: null}
-
     writeFile(pathToDb, JSON.stringify(notes, null, 2), (err) =>
     {
         if (err)
         {
-            resObj.message = "Error writing db file";
-            resObj.error = err;
+            res.json({message: "Error writing db file", error: err});
+            return;
         };
 
-        resObj.message = `Added note`;
-        resObj.added = newNote;
+        res.json(newNote);
     });
 
-    res.json(resObj);
 };
 
 export default postNotes;
