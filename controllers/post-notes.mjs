@@ -45,7 +45,7 @@ export const postNotes = (req, res) =>
     {
         if (err)
         {
-            res.json({message: "Error writing db file", error: err});
+            res.status(505).json({message: "Error writing db file", error: err});
             return;
         };
 

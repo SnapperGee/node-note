@@ -1,6 +1,6 @@
 export const redirectToIndex = (req, res) =>
 {
-    res.redirect("/index.html");
+    res.status(303).redirect("/index.html");
 };
 
 export default redirectToIndex;
