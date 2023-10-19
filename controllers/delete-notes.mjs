@@ -14,9 +14,8 @@ export const deleteNotes = (req, res) =>
         return;
     }
 
-    const notesObj = notes;
+    const notesObj = notes.filter((note, index) => indexOfNoteWithId !== index);
     const resObj = { deleted: structuredClone(notes[indexOfNoteWithId]), error: null }
-    delete notes[indexOfNoteWithId];
 
     const pathToDb = resolvePath("db", "db.json");
 
